@@ -5,130 +5,203 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Adrian Darmali</title>
   <meta name="description" content="Adrian Darmali — Strategy x Analytics, MBAN @ UBC Sauder" />
+  <!-- Inter: modern professional font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --max: 920px; }
+    :root {
+      --max: 980px;
+      --bg: #f3f6f9;        /* soft non-white background */
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0f172a;    /* dark slate for headings */
+      --chip-bg: rgba(15,23,42,0.04);
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+
+    html,body { height: 100%; }
     body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       line-height: 1.55;
       margin: 0;
-      color:#111;
-      background:#fff;
+      color: #0b1220;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    header, main, footer{
+
+    .wrap {
       max-width: var(--max);
-      margin: 0 auto;
+      margin: 36px auto;
       padding: 24px;
     }
-    header{ padding-top: 40px; padding-bottom: 8px; }
-    h1{ margin: 0 0 6px 0; font-size: 34px; letter-spacing: -0.02em; }
-    .subtitle{ margin: 0; color:#444; }
-    section{ margin-top: 28px; }
-    h2{ margin: 0 0 10px 0; font-size: 18px; }
-    p{ margin: 10px 0; }
-    ul{ margin: 8px 0 0 18px; padding: 0; }
-    li{ margin: 6px 0; }
-    a{ color: inherit; text-decoration: underline; }
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .chip{
-      border:1px solid #ddd;
-      border-radius:999px;
-      padding:6px 10px;
-      font-size:13px;
-      color:#222;
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
     }
-    .profile{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      margin-top: 14px;
+
+    .header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .avatar{
-      width: 112px;
-      height: 112px;
+
+    .avatar {
+      width: 120px;
+      height: 120px;
       border-radius: 16px;
       object-fit: cover;
-      border: 1px solid #eee;
-      background: #fafafa;
+      border: 1px solid rgba(15,23,42,0.06);
+      background: #f8fafc;
       flex: 0 0 auto;
     }
-    footer{ color:#666; font-size:13px; padding-top:14px; padding-bottom:40px; }
-    .links li{ word-break: break-word; }
+
+    .title {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+    .chip{
+      border-radius: 999px;
+      padding:8px 12px;
+      font-size:13px;
+      color: #0b1220;
+      background: var(--chip-bg);
+      border: 1px solid rgba(15,23,42,0.03);
+    }
+
+    main {
+      margin-top: 22px;
+    }
+
+    section {
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    p { margin: 8px 0; color: #111827; }
+    ul { margin: 8px 0 0 18px; padding: 0; color: #111827; }
+    li { margin: 6px 0; }
+
+    a { color: inherit; text-decoration: underline; }
+
+    footer {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 18px 0 8px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:720px){
+      .header { gap: 14px; }
+      .avatar { width: 96px; height: 96px; border-radius: 12px; }
+      h1 { font-size: 24px; }
+      .wrap { margin: 20px; padding: 16px; }
+      .card { padding: 18px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Adrian Darmali</h1>
-    <p class="subtitle">Strategy × Analytics • MBAN @ UBC Sauder</p>
+  <div class="wrap">
+    <div class="card" aria-label="Profile card">
+      <header class="header" role="banner">
+        <!-- Profile photo -->
+        <img class="avatar" src="assets/profile.jpg" alt="Profile photo of Adrian Darmali" />
+        <div class="title">
+          <h1>Adrian Darmali</h1>
+          <p class="subtitle">Strategy × Analytics • MBAN @ UBC Sauder</p>
 
-    <!-- Profile picture: put your image in assets/ and update the file name -->
-    <div class="profile">
-      <img class="avatar" src="assets/profile.jpg" alt="Adrian Darmali profile photo" />
-      <div>
-        <div class="chips" aria-label="Skill highlights">
-          <span class="chip">Python</span>
-          <span class="chip">SQL</span>
-          <span class="chip">A/B Testing</span>
-          <span class="chip">Optimization (LP/MILP)</span>
-          <span class="chip">Recommendation / Ranking</span>
-          <span class="chip">Dashboards</span>
-          <span class="chip">Growth Strategy</span>
+          <div class="chips" aria-label="Skill highlights">
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">A/B Testing</span>
+            <span class="chip">Optimization</span>
+            <span class="chip">Ranking / Recsys</span>
+            <span class="chip">Dashboards</span>
+            <span class="chip">Growth Strategy</span>
+          </div>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            Hi, I’m Adrian. I work at the intersection of business strategy and data science.
+            Before UBC, I spent 8+ years in strategy and growth roles—launching new initiatives,
+            improving funnels, and using data to drive revenue and efficiency.
+          </p>
+          <p>
+            Now, as an MBAN student at UBC Sauder, I build practical analytics tools end-to-end:
+            data pipelines, scoring models, dashboards, and optimization. I enjoy problems with
+            real trade-offs—pricing, growth, operations, and marketplace dynamics—and I like
+            shipping work that stakeholders can use.
+          </p>
+        </section>
+
+        <section id="research">
+          <h2>Research interests</h2>
+          <ul>
+            <li>Agentic AI (tool-using agents, workflow automation, decision support)</li>
+            <li>Machine learning (prediction, ranking, experimentation)</li>
+            <li>Data-driven marketing strategy (segmentation, lifecycle, measurement)</li>
+          </ul>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li><strong>Programming:</strong> Python (pandas, numpy, scikit-learn), SQL</li>
+            <li><strong>Data & analytics:</strong> data cleaning, feature engineering, cohort/segmentation</li>
+            <li><strong>Modeling:</strong> regression/classification, recommendation systems</li>
+            <li><strong>Optimization & OR:</strong> linear programming, mixed-integer programming</li>
+          </ul>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <ul class="links">
+            <li><a href="https://github.com/adriandarmali/rag" target="_blank" rel="noopener noreferrer">RAG experiments</a></li>
+            <li><a href="https://github.com/adriandarmali?tab=repositories" target="_blank" rel="noopener noreferrer">More repositories</a></li>
+          </ul>
+        </section>
+      </main>
     </div>
-  </header>
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Hi, I’m Adrian. I work at the intersection of business strategy and data science.
-        Before UBC, I spent 8+ years in strategy and growth roles across TikTok Shop, Grab,
-        and a B2B e-commerce startup—launching new initiatives, improving funnels, and using
-        data to drive revenue and efficiency.
-      </p>
-      <p>
-        Now, as an MBAN student at UBC Sauder, I build practical analytics tools end-to-end:
-        data pipelines, scoring models, dashboards, and optimization. I enjoy problems with
-        real trade-offs—pricing, growth, operations, and marketplace dynamics—and I like
-        shipping work that stakeholders can use.
-      </p>
-    </section>
-
-    <section id="research">
-      <h2>Research interests</h2>
-      <ul>
-        <li>Agentic AI (tool-using agents, workflow automation, decision support)</li>
-        <li>Machine learning (prediction, ranking, experimentation)</li>
-        <li>Data-driven marketing strategy (segmentation, lifecycle, incentives, measurement)</li>
-      </ul>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Python (pandas, numpy, scikit-learn), SQL</li>
-        <li><strong>Data & analytics:</strong> data cleaning, feature engineering, cohort/segmentation analysis, ...</li>
-        <li><strong>Modeling:</strong> regression/classification, forecasting basics, recommendation systems (ranking/scoring), ...</li>
-        <li><strong>Optimization & OR:</strong> linear programming, mixed-integer programming, constraint-based design, ...</li>
-        <li><strong>Data engineering (practical):</strong> ETL pipelines, API/data ingestion, reproducible notebooks, ...</li>
-        <li><strong>BI & visualization:</strong> dashboards, stakeholder-ready reporting, insight storytelling, ...</li>
-        <li><strong>Product & strategy:</strong> growth strategy, marketplace dynamics, customer/seller incentives, ...</li>
-        <li><strong>Ways of working:</strong> cross-functional leadership, requirements → metrics → implementation, ...</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="links">
-        <li><a href="https://github.com/adriandarmali/rag" target="_blank" rel="noopener noreferrer">RAG experiments</a></li>
-        <li><a href="https://github.com/adriandarmali?tab=repositories" target="_blank" rel="noopener noreferrer">More repositories</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div>© <span id="year"></span> Adrian Darmali</div>
-  </footer>
+    <footer>
+      <div>© <span id="year"></span> Adrian Darmali</div>
+    </footer>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
